@@ -42,9 +42,6 @@ export default function Footer() {
           </div>
 
           <div className="pt-4 space-y-2">
-            <p className="text-slate-600 text-xs">
-              Designed & built with React, Tailwind CSS, and Framer Motion
-            </p>
             <p className="text-slate-700 text-xs">
               Based in Kajiado, Kenya
             </p>

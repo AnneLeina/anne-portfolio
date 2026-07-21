@@ -1,116 +1,111 @@
-import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { Menu, X, Download } from 'lucide-react';
 
-export default function Navigation({ scrollPosition }) {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    setIsScrolled(scrollPosition > 50);
-  }, [scrollPosition]);
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    }
+  };
 
-  const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Background', href: '#background' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
-  ];
+  const downloadCV = () => {
+    // Create a link to download the CV
+    const link = document.createElement('a');
+    link.href = '/Leina_Anne_CV_.pdf';
+    link.download = 'Leina_Anne_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
-    <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container-custom px-6 md:px-8 py-4 flex items-center justify-between">
-        {/* Logo Section */}
-        <div className="flex flex-col gap-1">
-          <a
-            href="#home"
-            className="text-2xl font-black bg-gradient-to-r from-green-400 to-emerald-400 text-transparent bg-clip-text hover:from-green-300 hover:to-teal-300 transition-all"
-          >
-            Anne Leina
-          </a>
-          <div className="flex items-center gap-2">
-            <motion.span
-              className="w-2 h-2 bg-green-400 rounded-full"
-              animate={{ scale: [1, 1.3, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-            <span className="text-xs text-slate-400">
-              Open for Collaborations
-            </span>
-          </div>
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="relative text-slate-300 hover:text-slate-100 font-medium text-sm transition-colors group"
+    <nav className="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <button
+              onClick={() => scrollToSection('hero')}
+              className="text-2xl font-bold text-blue-600 hover:text-blue-700 transition"
             >
-              {link.name}
-              <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-gradient-to-r from-green-400 to-emerald-400 scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
-            </a>
-          ))}
-        </div>
+              AL
+            </button>
+          </div>
 
-        {/* Desktop CTA */}
-        <a
-          href="#contact"
-          className="hidden md:block px-6 py-2.5 bg-gradient-to-r from-green-500 to-emerald-500 text-slate-950 font-bold rounded-lg hover:shadow-lg hover:shadow-green-500/50 transition-all hover:scale-105 active:scale-95"
-        >
-          Let's Talk
-        </a>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 hover:bg-slate-800/50 rounded-lg transition-colors"
-        >
-          {isMobileMenuOpen ? (
-            <X className="w-6 h-6 text-slate-300" />
-          ) : (
-            <Menu className="w-6 h-6 text-slate-300" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
-          className="md:hidden border-t border-slate-800/50 bg-slate-900/50 backdrop-blur-lg"
-        >
-          <div className="px-6 py-4 flex flex-col gap-3">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-slate-300 hover:text-green-400 font-medium py-2 transition-colors"
+          {/* Desktop Menu */}
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-center space-x-1">
+              {['about', 'projects', 'skills', 'contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item)}
+                  className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition"
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </button>
+              ))}
+              
+              {/* CV Download Button */}
+              <button
+                onClick={downloadCV}
+                className="ml-4 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition flex items-center gap-2 font-semibold"
               >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="#contact"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="mt-2 px-6 py-2.5 bg-gradient-to-r from-green-500 to-emerald-500 text-slate-950 font-bold rounded-lg text-center hover:shadow-lg transition-all"
-            >
-              Get in Touch
-            </a>
+                <Download size={18} />
+                CV
+              </button>
+            </div>
           </div>
-        </motion.div>
-      )}
+
+          {/* Mobile menu button */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={downloadCV}
+              className="p-2 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition"
+              title="Download CV"
+            >
+              <Download size={20} />
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg hover:bg-gray-100 transition"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isOpen && (
+          <div className="md:hidden pb-4 space-y-1">
+            {['about', 'projects', 'skills', 'contact'].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition"
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </button>
+            ))}
+            <button
+              onClick={() => {
+                downloadCV();
+                setIsOpen(false);
+              }}
+              className="w-full mt-2 px-3 py-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white rounded-lg hover:from-blue-700 hover:to-blue-800 transition flex items-center gap-2 font-semibold justify-center"
+            >
+              <Download size={18} />
+              Download CV
+            </button>
+          </div>
+        )}
+      </div>
     </nav>
   );
-}
+};
+
+export default Navigation;
