@@ -1,150 +1,186 @@
-import { motion } from 'framer-motion';
-import { Mail, Code2, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, ArrowRight } from 'lucide-react';
 
-export default function Contact() {
-  const contactLinks = [
-    {
-      label: 'Email',
-      value: 'annelenku@gmail.com',
-      href: 'mailto:annelenku@gmail.com',
-      color: 'text-red-400 hover:text-red-300',
-      
-    },
-    {
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/annelenku',
-      href: 'https://linkedin.com/in/annelenku',
-      color: 'text-blue-400 hover:text-blue-300',
-      
-    },
-    {
-      label: 'GitHub',
-      value: 'github.com/annelenku',
-      href: 'https://github.com/anneleina',
-      color: 'text-slate-300 hover:text-slate-100',
-      
-    },
-  ];
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 },
-    },
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Create mailto link
+    const mailtoLink = `mailto:annelenku@gmail.com?subject=${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`;
+    window.location.href = mailtoLink;
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-green-500/5 rounded-full blur-3xl -z-10"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl -z-10"></div>
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-950 to-slate-900">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">Let's Work Together</h2>
+          <p className="text-gray-300 text-lg">
+            Have a project in mind? Let's build something amazing together.
+          </p>
+        </div>
 
-      <div className="container-custom px-6 md:px-8">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          variants={containerVariants}
-          className="max-w-2xl mx-auto text-center"
-        >
-          <motion.div variants={itemVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">
-              Interested in Tech for Impact?
-            </h2>
-          </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          
+          {/* LEFT: Contact Info */}
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold text-green-400 mb-6">Get in Touch</h3>
 
-          <motion.p
-            variants={itemVariants}
-            className="text-lg text-slate-400 mb-8 leading-relaxed"
-          >
-            Let's collaborate on healthcare, nonprofit, or community-focused technology that creates lasting impact.
-          </motion.p>
-
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12"
-          >
-            <a
+            {/* Email */}
+            <a 
               href="mailto:annelenku@gmail.com"
-              className="btn-primary inline-flex items-center justify-center gap-2 group"
+              className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-800/50 transition group"
             >
-              <Mail className="w-4 h-4" />
-              Email Me
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <Mail className="text-green-400 mt-1 flex-shrink-0 group-hover:scale-110 transition" size={24} />
+              <div>
+                <p className="text-gray-400 text-sm font-semibold">Email</p>
+                <p className="text-white font-medium group-hover:text-green-400 transition">annelenku@gmail.com</p>
+              </div>
             </a>
-          </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="glass rounded-2xl p-8 md:p-10 mb-12 bg-slate-800/30"
-          >
-            <p className="text-slate-400 text-sm uppercase tracking-wider mb-6 font-semibold">
-              Get in Touch
-            </p>
-            <div className="space-y-4">
-              {contactLinks.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href={link.href}
-                  target={link.href.startsWith('mailto') ? '_self' : '_blank'}
-                  rel={link.href.startsWith('mailto') ? '' : 'noopener noreferrer'}
-                  whileHover={{ x: 4 }}
-                  className="flex items-center gap-4 p-4 rounded-lg hover:bg-slate-800/50 transition-colors group"
+            {/* Phone */}
+            <a 
+              href="tel:+254711410982"
+              className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-800/50 transition group"
+            >
+              <Phone className="text-green-400 mt-1 flex-shrink-0 group-hover:scale-110 transition" size={24} />
+              <div>
+                <p className="text-gray-400 text-sm font-semibold">Phone</p>
+                <p className="text-white font-medium group-hover:text-green-400 transition">+254 711 410 982</p>
+              </div>
+            </a>
+
+            {/* Socials */}
+            <div>
+              <p className="text-gray-400 text-sm font-semibold mb-4">Connect</p>
+              <div className="flex gap-4">
+                {/* GitHub */}
+                <a
+                  href="https://github.com/AnneLeina"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-800/50 hover:bg-green-500/20 border border-gray-700 hover:border-green-400/50 rounded-lg transition flex items-center justify-center group"
+                  title="GitHub"
                 >
-                  <div className={`text-2xl ${link.color}`}>
-                    {link.icon}
-                  </div>
-                  <div className="text-left flex-1">
-                    <p className="text-xs uppercase tracking-wider text-slate-500 font-semibold">
-                      {link.label}
-                    </p>
-                    <p className="text-slate-200 font-medium group-hover:text-green-400 transition-colors">
-                      {link.value}
-                    </p>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-slate-500 opacity-0 group-hover:opacity-100 transition-all" />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+                  <span className="text-gray-300 group-hover:text-green-400 transition font-bold">GH</span>
+                </a>
 
-          <motion.div variants={itemVariants} className="flex justify-center gap-6">
-            <motion.a
-              href="https://github.com/annelenku"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="w-12 h-12 glass rounded-full flex items-center justify-center text-slate-300 hover:text-green-400 hover:border-green-500/40 transition-all text-xl"
-              title="GitHub"
-            >
-              💻
-            </motion.a>
-            <motion.a
-              href="https://linkedin.com/in/annelenku"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="w-12 h-12 glass rounded-full flex items-center justify-center text-slate-300 hover:text-blue-400 hover:border-blue-500/40 transition-all text-xl"
-              title="LinkedIn"
-            >
-              💼
-            </motion.a>
-            <motion.a
-              href="mailto:annelenku@gmail.com"
-              whileHover={{ scale: 1.1, rotate: 5 }}
-              className="w-12 h-12 glass rounded-full flex items-center justify-center text-slate-300 hover:text-red-400 hover:border-red-500/40 transition-all text-xl"
-              title="Email"
-            >
-              📧
-            </motion.a>
-          </motion.div>
-        </motion.div>
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/anne-l-375ab9282/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 bg-gray-800/50 hover:bg-blue-500/20 border border-gray-700 hover:border-blue-400/50 rounded-lg transition flex items-center justify-center group"
+                  title="LinkedIn"
+                >
+                  <span className="text-gray-300 group-hover:text-blue-400 transition font-bold text-sm">in</span>
+                </a>
+
+                {/* Email Direct */}
+                <a
+                  href="mailto:annelenku@gmail.com"
+                  className="p-3 bg-gray-800/50 hover:bg-green-500/20 border border-gray-700 hover:border-green-400/50 rounded-lg transition flex items-center justify-center group"
+                  title="Email"
+                >
+                  <Mail className="text-gray-300 group-hover:text-green-400 transition" size={24} />
+                </a>
+              </div>
+            </div>
+
+            {/* Response Time */}
+            <div className="bg-green-500/10 border border-green-400/30 rounded-lg p-4">
+              <p className="text-green-400 font-semibold text-sm">💚 Quick Response</p>
+              <p className="text-gray-300 text-sm mt-1">I typically respond within 24 hours</p>
+            </div>
+          </div>
+
+          {/* RIGHT: Contact Form */}
+          <div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-gray-300 font-semibold mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-green-400 focus:outline-none transition"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-gray-300 font-semibold mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-green-400 focus:outline-none transition"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-gray-300 font-semibold mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-green-400 focus:outline-none transition resize-none"
+                  placeholder="Tell me about your project..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition flex items-center justify-center gap-2 group"
+              >
+                Send Message
+                <ArrowRight size={20} className="group-hover:translate-x-1 transition" />
+              </button>
+
+              {submitted && (
+                <p className="text-green-400 text-center font-semibold">✓ Email opened! Send your message</p>
+              )}
+            </form>
+
+            {/* Alternative */}
+            <div className="mt-6 p-4 bg-gray-800/30 border border-gray-700 rounded-lg text-center">
+              <p className="text-gray-400 text-sm">Or reach out directly:</p>
+              <a href="mailto:annelenku@gmail.com" className="text-green-400 font-semibold hover:underline">
+                annelenku@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default Contact;
