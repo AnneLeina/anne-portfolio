@@ -137,9 +137,9 @@ const Hero = () => {
               {/* Main Headline */}
               <div>
                 <h1 className="text-5xl lg:text-6xl font-black leading-tight mb-4">
-                  <span className="text-white">Full-Stack</span>
+                  <span className="text-white">I Build Software</span>
                   <br />
-                  <span className="text-green-400">Developer</span>
+                  <span className="text-green-400">That Works</span>
                   <br />
                   <span className="text-white">Impact Tech</span>
                 </h1>

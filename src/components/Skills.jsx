@@ -22,7 +22,7 @@ export default function Skills() {
     },
     {
       title: 'Deployment & DevOps',
-      skills: ['Vercel', 'Environment Configuration', 'Git', 'GitHub', 'Production Debugging'],
+      skills: ['Vercel', 'Environment Configuration', 'Git', 'GitHub', 'Production Debugging','Railway'],
       color: 'from-orange-500/20 to-red-500/20',
       accentColor: 'text-orange-400',
     },

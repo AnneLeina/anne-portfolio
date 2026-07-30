@@ -8,7 +8,7 @@ const About = () => {
         
         <div className="space-y-6 text-gray-300">
           <p className="text-lg leading-relaxed">
-            I'm a Full-Stack Developer with 4+ years of experience building scalable systems for healthcare and nonprofit organizations. My journey in tech started with a passion for solving real-world problems through code.
+            I'm a Software Engineer with 4+ years of experience building scalable systems for healthcare and nonprofit organizations. My journey in tech started with a passion for solving real-world problems through code.
           </p>
 
           <p className="text-lg leading-relaxed">

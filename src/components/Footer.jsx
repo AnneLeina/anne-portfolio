@@ -27,7 +27,7 @@ export default function Footer() {
               Anne Leina Lenku
             </h3>
             <p className="text-slate-400 font-medium">
-              Full-Stack Developer
+              Software Engineer
             </p>
           </div>
 

@@ -106,7 +106,7 @@ const Contact = () => {
 
             {/* Response Time */}
             <div className="bg-green-500/10 border border-green-400/30 rounded-lg p-4">
-              <p className="text-green-400 font-semibold text-sm">💚 Quick Response</p>
+              <p className="text-green-400 font-semibold text-sm"> Quick Response</p>
               <p className="text-gray-300 text-sm mt-1">I typically respond within 24 hours</p>
             </div>
           </div>
