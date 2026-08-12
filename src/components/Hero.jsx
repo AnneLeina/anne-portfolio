@@ -203,24 +203,20 @@ const Hero = () => {
                 />
               </div>
 
-              {/* Tech Stack - 2 Column Grid with Portfolio Colors */}
+              {/* Tech Stack - 2 Column Grid with Uniform White */}
               <div className="bg-gray-900/30 border border-gray-700/50 rounded-2xl p-4">
                 <p className="text-gray-300 text-sm font-semibold mb-4">TECH STACK</p>
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    { name: 'React', color: 'white' },
-                    { name: 'Node.js', color: 'white' },
-                    { name: 'MySQL', color: 'white' },
-                    { name: 'Git', color: 'white' },
-                    { name: 'Docker', color: 'white' },
-                    { name: 'AWS', color: 'white' }
+                    'React',
+                    'Node.js',
+                    'MySQL',
+                    'Git',
+                    'Docker',
+                    'AWS'
                   ].map((tech, i) => (
-                    <div key={i} className={`px-3.5 py-2.5 rounded-lg font-semibold text-sm text-center hover:scale-105 transition ${
-                      tech.color === 'blue' 
-                        ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' 
-                        : 'bg-green-500/20 text-green-400 border border-green-500/30'
-                    }`}>
-                      {tech.name}
+                    <div key={i} className="px-3.5 py-2.5 rounded-lg font-semibold text-sm text-center hover:scale-105 transition bg-white/10 text-white border border-white/30 hover:bg-white/20">
+                      {tech}
                     </div>
                   ))}
                 </div>
