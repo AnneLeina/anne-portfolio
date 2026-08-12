@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+
+Sitemap: https://anne-portfolio-teal.vercel.app/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Other search engines
+User-agent: *
+Allow: /
+Crawl-delay: 1
