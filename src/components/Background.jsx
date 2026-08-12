@@ -63,11 +63,11 @@ export default function Background() {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="glass rounded-xl p-6 md:p-8 hover:border-green-500/40 transition-all hover:bg-slate-800/40"
+                  className="glass rounded-xl p-6 md:p-8 hover:border-white/40 transition-all hover:bg-slate-800/40"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-green-500/20 rounded-lg">
-                      <Icon className="w-6 h-6 text-green-400" />
+                    <div className="p-3 bg-white/20 rounded-lg">
+                      <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-slate-100 mb-2">
@@ -85,33 +85,33 @@ export default function Background() {
 
           <motion.div
             variants={itemVariants}
-            className="glass rounded-xl p-8 md:p-10 border-l-4 border-green-500 bg-slate-800/30"
+            className="glass rounded-xl p-8 md:p-10 border-l-4 border-white bg-slate-800/30"
           >
             <p className="text-slate-100 text-lg leading-relaxed mb-4">
               Before becoming a software developer, I worked in healthcare IT administration where I managed:
             </p>
             <ul className="space-y-2 mb-6">
               <li className="text-slate-300 flex items-center gap-3">
-                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                <span className="w-2 h-2 bg-white rounded-full"></span>
                 Electronic Health Record (EHR/EMR) systems
               </li>
               <li className="text-slate-300 flex items-center gap-3">
-                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                <span className="w-2 h-2 bg-white rounded-full"></span>
                 Medical billing workflows
               </li>
               <li className="text-slate-300 flex items-center gap-3">
-                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                <span className="w-2 h-2 bg-white rounded-full"></span>
                 Hospital networks and infrastructure
               </li>
               <li className="text-slate-300 flex items-center gap-3">
-                <span className="w-2 h-2 bg-green-400 rounded-full"></span>
+                <span className="w-2 h-2 bg-white rounded-full"></span>
                 Technical systems supporting patient care
               </li>
             </ul>
             <p className="text-slate-200 font-semibold text-lg">
               This experience shaped how I approach software:
             </p>
-            <p className="text-green-400 text-xl font-bold mt-3">
+            <p className="text-white text-xl font-bold mt-3">
               Reliable systems save time, reduce errors, and improve lives.
             </p>
           </motion.div>

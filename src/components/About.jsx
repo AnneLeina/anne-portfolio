@@ -16,26 +16,26 @@ const About = () => {
           </p>
 
           <div className="bg-gray-900/50 border border-gray-700 rounded-lg p-6 my-8">
-            <h3 className="text-green-400 font-bold mb-4">Key Expertise</h3>
+            <h3 className="text-white font-bold mb-4">Key Expertise</h3>
             <ul className="space-y-2">
               <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1">✓</span>
+                <span className="text-white mt-1">✓</span>
                 <span>Full-stack development (React, Node.js, Express)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1">✓</span>
+                <span className="text-white mt-1">✓</span>
                 <span>Database design & management (MySQL, TiDB)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1">✓</span>
+                <span className="text-white mt-1">✓</span>
                 <span>Healthcare IT systems & EMR/EHR platforms</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1">✓</span>
+                <span className="text-white mt-1">✓</span>
                 <span>Cloud deployment & DevOps (AWS, Docker, Vercel)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-green-400 mt-1">✓</span>
+                <span className="text-white mt-1">✓</span>
                 <span>Community-focused tech solutions</span>
               </li>
             </ul>
@@ -46,7 +46,7 @@ const About = () => {
           </p>
 
           <p className="text-lg leading-relaxed">
-            When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring other developers in tech communities.
+            When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or participating in tech communities.
           </p>
         </div>
       </div>

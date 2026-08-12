@@ -32,9 +32,9 @@ export default function Features() {
           transition={{ duration: 0.8 }}
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <motion.div className="w-12 h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full" />
-            <span className="text-sm uppercase tracking-widest text-green-400 font-bold">My Approach</span>
-            <motion.div className="w-12 h-1 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full" />
+            <motion.div className="w-12 h-1 bg-gradient-to-r from-white to-gray-300 rounded-full" />
+            <span className="text-sm uppercase tracking-widest text-white font-bold">My Approach</span>
+            <motion.div className="w-12 h-1 bg-gradient-to-r from-gray-300 to-white rounded-full" />
           </div>
           <h2 className="text-4xl md:text-5xl font-black mb-4 text-white">
             What Drives My Work
@@ -49,7 +49,7 @@ export default function Features() {
           {features.map((feature, idx) => (
             <motion.div
               key={idx}
-              className="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800/50 hover:border-green-500/50 backdrop-blur-sm transition-all duration-300"
+              className="group p-8 rounded-2xl bg-slate-900/50 border border-slate-800/50 hover:border-white/50 backdrop-blur-sm transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -57,7 +57,7 @@ export default function Features() {
               whileHover={{ y: -8 }}
             >
               {/* Title */}
-              <h3 className="text-xl md:text-2xl font-black text-white mb-3 group-hover:text-green-400 transition-colors">
+              <h3 className="text-xl md:text-2xl font-black text-white mb-3 group-hover:text-gray-200 transition-colors">
                 {feature.title}
               </h3>
 
@@ -68,7 +68,7 @@ export default function Features() {
 
               {/* Hover accent line */}
               <motion.div
-                className="h-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mt-4 origin-left"
+                className="h-1 bg-gradient-to-r from-white to-gray-300 rounded-full mt-4 origin-left"
                 initial={{ scaleX: 0 }}
                 whileHover={{ scaleX: 1 }}
                 transition={{ duration: 0.3 }}

@@ -6,37 +6,37 @@ export default function Skills() {
       title: 'Frontend',
       skills: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Vite', 'Tailwind CSS'],
       color: 'from-blue-500/20 to-cyan-500/20',
-      accentColor: 'text-blue-400',
+      accentColor: 'text-white',
     },
     {
       title: 'Backend',
       skills: ['Node.js', 'Express', 'REST APIs', 'JWT Authentication', 'Database Design'],
-      color: 'from-green-500/20 to-emerald-500/20',
-      accentColor: 'text-green-400',
+      color: 'from-gray-500/20 to-slate-500/20',
+      accentColor: 'text-white',
     },
     {
       title: 'Databases',
       skills: ['MySQL', 'TiDB Serverless', 'Query Optimization', 'Database Recovery'],
       color: 'from-purple-500/20 to-pink-500/20',
-      accentColor: 'text-purple-400',
+      accentColor: 'text-white',
     },
     {
       title: 'Deployment & DevOps',
       skills: ['Vercel', 'Environment Configuration', 'Git', 'GitHub', 'Production Debugging','Railway'],
       color: 'from-orange-500/20 to-red-500/20',
-      accentColor: 'text-orange-400',
+      accentColor: 'text-white',
     },
     {
       title: 'Integrations',
       skills: ['Cloudinary', 'PayPal APIs', 'Third-party APIs', 'Webhooks'],
       color: 'from-indigo-500/20 to-blue-500/20',
-      accentColor: 'text-indigo-400',
+      accentColor: 'text-white',
     },
     {
       title: 'Engineering',
       skills: ['Production Debugging', 'System Architecture', 'API Design', 'Performance Optimization'],
-      color: 'from-teal-500/20 to-green-500/20',
-      accentColor: 'text-teal-400',
+      color: 'from-slate-500/20 to-gray-500/20',
+      accentColor: 'text-white',
     },
   ];
 
@@ -79,7 +79,7 @@ export default function Skills() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`glass rounded-xl p-6 md:p-8 bg-gradient-to-br ${category.color} hover:border-green-500/40 transition-all group`}
+                className={`glass rounded-xl p-6 md:p-8 bg-gradient-to-br ${category.color} hover:border-white/40 transition-all group`}
               >
                 <h3 className={`text-xl font-bold ${category.accentColor} mb-4`}>
                   {category.title}
@@ -90,7 +90,7 @@ export default function Skills() {
                     <motion.span
                       key={skill}
                       whileHover={{ scale: 1.05, y: -2 }}
-                      className="px-4 py-2 bg-slate-800/60 text-slate-200 text-sm rounded-full border border-slate-600/40 hover:border-green-500/60 hover:text-green-300 transition-all cursor-pointer hover:bg-slate-700/60"
+                      className="px-4 py-2 bg-slate-800/60 text-slate-200 text-sm rounded-full border border-slate-600/40 hover:border-white/60 hover:text-white transition-all cursor-pointer hover:bg-slate-700/60"
                     >
                       {skill}
                     </motion.span>
@@ -101,9 +101,9 @@ export default function Skills() {
           </motion.div>
 
           <motion.div variants={itemVariants} className="mt-12">
-            <div className="glass rounded-xl p-8 md:p-10 border-t border-green-500/20">
+            <div className="glass rounded-xl p-8 md:p-10 border-t border-white/20">
               <p className="text-slate-300 text-lg leading-relaxed">
-                <span className="text-green-400 font-semibold">Beyond technologies:</span> I bring
+                <span className="text-white font-semibold">Beyond technologies:</span> I bring
                 expertise in database architecture, deployment strategies, third-party integrations, and
                 production-level debugging. Every tool I use is chosen to solve specific problems and
                 create measurable impact.

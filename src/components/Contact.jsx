@@ -20,7 +20,6 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Create mailto link
     const mailtoLink = `mailto:annelenku@gmail.com?subject=${encodeURIComponent(formData.name)}&body=${encodeURIComponent(formData.message)}`;
     window.location.href = mailtoLink;
     setSubmitted(true);
@@ -41,17 +40,17 @@ const Contact = () => {
           
           {/* LEFT: Contact Info */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-green-400 mb-6">Get in Touch</h3>
+            <h3 className="text-2xl font-bold text-white mb-6">Get in Touch</h3>
 
             {/* Email */}
             <a 
               href="mailto:annelenku@gmail.com"
               className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-800/50 transition group"
             >
-              <Mail className="text-green-400 mt-1 flex-shrink-0 group-hover:scale-110 transition" size={24} />
+              <Mail className="text-white mt-1 flex-shrink-0 group-hover:scale-110 transition" size={24} />
               <div>
                 <p className="text-gray-400 text-sm font-semibold">Email</p>
-                <p className="text-white font-medium group-hover:text-green-400 transition">annelenku@gmail.com</p>
+                <p className="text-white font-medium group-hover:text-gray-300 transition">annelenku@gmail.com</p>
               </div>
             </a>
 
@@ -60,10 +59,10 @@ const Contact = () => {
               href="tel:+254711410982"
               className="flex items-start gap-4 p-4 rounded-lg hover:bg-gray-800/50 transition group"
             >
-              <Phone className="text-green-400 mt-1 flex-shrink-0 group-hover:scale-110 transition" size={24} />
+              <Phone className="text-white mt-1 flex-shrink-0 group-hover:scale-110 transition" size={24} />
               <div>
                 <p className="text-gray-400 text-sm font-semibold">Phone</p>
-                <p className="text-white font-medium group-hover:text-green-400 transition">+254 711 410 982</p>
+                <p className="text-white font-medium group-hover:text-gray-300 transition">+254 711 410 982</p>
               </div>
             </a>
 
@@ -76,10 +75,10 @@ const Contact = () => {
                   href="https://github.com/AnneLeina"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-gray-800/50 hover:bg-green-500/20 border border-gray-700 hover:border-green-400/50 rounded-lg transition flex items-center justify-center group"
+                  className="p-3 bg-gray-800/50 hover:bg-white/20 border border-gray-700 hover:border-white/50 rounded-lg transition flex items-center justify-center group"
                   title="GitHub"
                 >
-                  <span className="text-gray-300 group-hover:text-green-400 transition font-bold">GH</span>
+                  <span className="text-gray-300 group-hover:text-white transition font-bold">GH</span>
                 </a>
 
                 {/* LinkedIn */}
@@ -96,17 +95,17 @@ const Contact = () => {
                 {/* Email Direct */}
                 <a
                   href="mailto:annelenku@gmail.com"
-                  className="p-3 bg-gray-800/50 hover:bg-green-500/20 border border-gray-700 hover:border-green-400/50 rounded-lg transition flex items-center justify-center group"
+                  className="p-3 bg-gray-800/50 hover:bg-white/20 border border-gray-700 hover:border-white/50 rounded-lg transition flex items-center justify-center group"
                   title="Email"
                 >
-                  <Mail className="text-gray-300 group-hover:text-green-400 transition" size={24} />
+                  <Mail className="text-gray-300 group-hover:text-white transition" size={24} />
                 </a>
               </div>
             </div>
 
             {/* Response Time */}
-            <div className="bg-green-500/10 border border-green-400/30 rounded-lg p-4">
-              <p className="text-green-400 font-semibold text-sm"> Quick Response</p>
+            <div className="bg-white/10 border border-white/30 rounded-lg p-4">
+              <p className="text-white font-semibold text-sm">Quick Response</p>
               <p className="text-gray-300 text-sm mt-1">I typically respond within 24 hours</p>
             </div>
           </div>
@@ -123,7 +122,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-green-400 focus:outline-none transition"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-white focus:outline-none transition"
                   placeholder="Your name"
                 />
               </div>
@@ -137,7 +136,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-green-400 focus:outline-none transition"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-white focus:outline-none transition"
                   placeholder="your@email.com"
                 />
               </div>
@@ -151,28 +150,28 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-green-400 focus:outline-none transition resize-none"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:border-white focus:outline-none transition resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg transition flex items-center justify-center gap-2 group"
+                className="w-full px-6 py-3 bg-white hover:bg-gray-200 text-slate-950 font-bold rounded-lg transition flex items-center justify-center gap-2 group"
               >
                 Send Message
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition" />
               </button>
 
               {submitted && (
-                <p className="text-green-400 text-center font-semibold">✓ Email opened! Send your message</p>
+                <p className="text-white text-center font-semibold">✓ Email opened! Send your message</p>
               )}
             </form>
 
             {/* Alternative */}
             <div className="mt-6 p-4 bg-gray-800/30 border border-gray-700 rounded-lg text-center">
               <p className="text-gray-400 text-sm">Or reach out directly:</p>
-              <a href="mailto:annelenku@gmail.com" className="text-green-400 font-semibold hover:underline">
+              <a href="mailto:annelenku@gmail.com" className="text-white font-semibold hover:underline">
                 annelenku@gmail.com
               </a>
             </div>

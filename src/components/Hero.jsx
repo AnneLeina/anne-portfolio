@@ -3,7 +3,7 @@ import { ArrowRight, Menu, X, Download } from 'lucide-react';
 
 const ProjectCard = ({ title, description, tech }) => {
   return (
-    <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-4 text-white shadow-lg hover:shadow-xl transition">
+    <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-4 text-white shadow-lg hover:shadow-xl transition">
       <h3 className="text-base font-bold mb-1">{title}</h3>
       <p className="text-white/85 text-xs mb-2 leading-tight">{description}</p>
       <div className="flex flex-wrap gap-1.5">
@@ -47,7 +47,7 @@ const Hero = () => {
             {/* Logo/Name */}
             <button
               onClick={() => scrollToSection('hero')}
-              className="text-2xl font-bold text-green-400 hover:text-green-300 transition"
+              className="text-2xl font-bold text-white hover:text-gray-200 transition"
             >
               Anne Leina
             </button>
@@ -58,7 +58,7 @@ const Hero = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className="text-gray-300 hover:text-green-400 transition font-medium capitalize text-sm"
+                  className="text-gray-300 hover:text-white transition font-medium capitalize text-sm"
                 >
                   {item}
                 </button>
@@ -67,7 +67,7 @@ const Hero = () => {
               {/* CV Download Button */}
               <button
                 onClick={downloadCV}
-                className="px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition flex items-center gap-2 font-semibold text-sm"
+                className="px-4 py-2 bg-white hover:bg-gray-200 text-slate-950 rounded-lg transition flex items-center gap-2 font-semibold text-sm"
               >
                 <Download size={16} />
                 CV
@@ -78,7 +78,7 @@ const Hero = () => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 text-gray-300 hover:text-green-400"
+                className="p-2 text-gray-300 hover:text-white"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -92,7 +92,7 @@ const Hero = () => {
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
-                  className="block w-full text-left px-3 py-2 text-gray-300 hover:text-green-400 hover:bg-gray-800/50 rounded-lg transition capitalize text-sm"
+                  className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition capitalize text-sm"
                 >
                   {item}
                 </button>
@@ -102,7 +102,7 @@ const Hero = () => {
                   downloadCV();
                   setIsOpen(false);
                 }}
-                className="w-full px-3 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition flex items-center gap-2 font-semibold justify-center text-sm"
+                className="w-full px-3 py-2 bg-white hover:bg-gray-200 text-slate-950 rounded-lg transition flex items-center gap-2 font-semibold justify-center text-sm"
               >
                 <Download size={16} />
                 Download CV
@@ -123,14 +123,8 @@ const Hero = () => {
               {/* Status Indicators */}
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
                   <p className="text-gray-300 font-medium text-sm">Open for Collaborations</p>
-                </div>
-                
-                {/* Available Now Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 border border-green-400/50 rounded-full bg-green-400/10">
-                  <div className="w-1.5 h-1.5 bg-green-400 rounded-full"></div>
-                  <span className="text-green-400 font-semibold text-xs">Available Now</span>
                 </div>
               </div>
 
@@ -139,7 +133,7 @@ const Hero = () => {
                 <h1 className="text-5xl lg:text-6xl font-black leading-tight mb-4">
                   <span className="text-white">I Build Software</span>
                   <br />
-                  <span className="text-green-400">That Works</span>
+                  <span className="text-white">That Works</span>
                   <br />
                   <span className="text-white">Impact Tech</span>
                 </h1>
@@ -150,7 +144,7 @@ const Hero = () => {
                 </p>
 
                 {/* Quote */}
-                <div className="border-l-4 border-green-400 pl-4">
+                <div className="border-l-4 border-white pl-4">
                   <p className="text-sm text-gray-300 italic">
                     "Technology should solve real problems—not create new ones."
                   </p>
@@ -161,7 +155,7 @@ const Hero = () => {
               <div className="flex flex-wrap gap-3">
                 <button
                   onClick={() => scrollToSection('projects')}
-                  className="px-6 py-3 border-2 border-green-400 text-green-400 hover:bg-green-400/10 font-bold rounded-lg transition flex items-center gap-2 group"
+                  className="px-6 py-3 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition flex items-center gap-2 group"
                 >
                   View My Work
                   <ArrowRight size={18} className="group-hover:translate-x-1 transition" />
@@ -169,7 +163,7 @@ const Hero = () => {
 
                 <button
                   onClick={() => scrollToSection('contact')}
-                  className="px-6 py-3 border-2 border-green-400 text-green-400 hover:bg-green-400/10 font-bold rounded-lg transition"
+                  className="px-6 py-3 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition"
                 >
                   Get in Touch
                 </button>
@@ -178,15 +172,15 @@ const Hero = () => {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 pt-6 border-t border-gray-700/50">
                 <div>
-                  <p className="text-2xl font-bold text-green-400 mb-1">4+</p>
+                  <p className="text-2xl font-bold text-white mb-1">4+</p>
                   <p className="text-gray-400 text-xs">Years in Tech</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-green-400 mb-1">7+</p>
+                  <p className="text-2xl font-bold text-white mb-1">7+</p>
                   <p className="text-gray-400 text-xs">Projects Built</p>
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-green-400 mb-1">100%</p>
+                  <p className="text-2xl font-bold text-white mb-1">100%</p>
                   <p className="text-gray-400 text-xs">Commitment</p>
                 </div>
               </div>
@@ -194,7 +188,7 @@ const Hero = () => {
 
             {/* RIGHT: Cards + Tech Stack */}
             <div className="space-y-6">
-              {/* Project Cards - Smaller, Both Green */}
+              {/* Project Cards - Smaller, Both Neutral */}
               <div className="space-y-2">
                 <ProjectCard
                   title="Hope Emayian Platform"
@@ -214,12 +208,12 @@ const Hero = () => {
                 <p className="text-gray-300 text-sm font-semibold mb-4">TECH STACK</p>
                 <div className="grid grid-cols-2 gap-2">
                   {[
-                    { name: 'React', color: 'blue' },
-                    { name: 'Node.js', color: 'blue' },
-                    { name: 'MySQL', color: 'blue' },
-                    { name: 'Git', color: 'blue' },
-                    { name: 'Docker', color: 'blue' },
-                    { name: 'AWS', color: 'blue' }
+                    { name: 'React', color: 'white' },
+                    { name: 'Node.js', color: 'white' },
+                    { name: 'MySQL', color: 'white' },
+                    { name: 'Git', color: 'white' },
+                    { name: 'Docker', color: 'white' },
+                    { name: 'AWS', color: 'white' }
                   ].map((tech, i) => (
                     <div key={i} className={`px-3.5 py-2.5 rounded-lg font-semibold text-sm text-center hover:scale-105 transition ${
                       tech.color === 'blue' 
