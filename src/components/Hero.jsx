@@ -54,7 +54,7 @@ const Hero = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-1 gap-8">
-              {['about', 'projects', 'skills', 'contact'].map((item) => (
+              {['about', 'projects', 'skills','services', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -88,7 +88,7 @@ const Hero = () => {
           {/* Mobile Menu */}
           {isOpen && (
             <div className="md:hidden pb-4 space-y-2">
-              {['about', 'projects', 'skills', 'contact'].map((item) => (
+              {['about', 'projects', 'skills','services', 'contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}

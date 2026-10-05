@@ -40,7 +40,7 @@ const Navigation = () => {
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-1">
-              {['about', 'projects', 'skills', 'contact'].map((item) => (
+              {['about', 'projects', 'skills','services','contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item)}
@@ -82,7 +82,7 @@ const Navigation = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden pb-4 space-y-1">
-            {['about', 'projects', 'skills', 'contact'].map((item) => (
+            {['about', 'projects', 'skills','services', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}

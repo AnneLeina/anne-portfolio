@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Features from './components/Features';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Services from './components/Services';
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -29,6 +30,7 @@ function App() {
       <Projects />
       <Background />
       <Skills />
+      <Services />
       <Features />
       <Contact />
       <Footer />
