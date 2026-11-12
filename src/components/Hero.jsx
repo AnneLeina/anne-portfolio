@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowRight, Menu, X, Download } from 'lucide-react';
+import React, { useState } from "react";
+import { ArrowRight, Menu, X, Download } from "lucide-react";
 
 const ProjectCard = ({ title, description, tech }) => {
   return (
@@ -8,7 +8,10 @@ const ProjectCard = ({ title, description, tech }) => {
       <p className="text-white/85 text-xs mb-2 leading-tight">{description}</p>
       <div className="flex flex-wrap gap-1.5">
         {tech.map((t, i) => (
-          <span key={i} className="text-xs bg-white/25 px-2 py-0.5 rounded-full font-medium">
+          <span
+            key={i}
+            className="text-xs bg-white/25 px-2 py-0.5 rounded-full font-medium"
+          >
             {t}
           </span>
         ))}
@@ -23,15 +26,15 @@ const Hero = () => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
       setIsOpen(false);
     }
   };
 
   const downloadCV = () => {
-    const link = document.createElement('a');
-    link.href = '/Leina_Anne_CV_.pdf';
-    link.download = 'Leina_Anne_CV.pdf';
+    const link = document.createElement("a");
+    link.href = "/Leina_Anne_CV_.pdf";
+    link.download = "Leina_Anne_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -43,10 +46,9 @@ const Hero = () => {
       <nav className="fixed w-full top-0 z-50 bg-gradient-to-b from-slate-950/95 to-transparent backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            
             {/* Logo/Name */}
             <button
-              onClick={() => scrollToSection('hero')}
+              onClick={() => scrollToSection("hero")}
               className="text-2xl font-bold text-white hover:text-gray-200 transition"
             >
               Anne Leina
@@ -54,16 +56,18 @@ const Hero = () => {
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-1 gap-8">
-              {['about', 'projects', 'skills','services', 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className="text-gray-300 hover:text-white transition font-medium capitalize text-sm"
-                >
-                  {item}
-                </button>
-              ))}
-              
+              {["about", "projects", "skills", "services", "contact"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item)}
+                    className="text-gray-300 hover:text-white transition font-medium capitalize text-sm"
+                  >
+                    {item}
+                  </button>
+                ),
+              )}
+
               {/* CV Download Button */}
               <button
                 onClick={downloadCV}
@@ -88,15 +92,17 @@ const Hero = () => {
           {/* Mobile Menu */}
           {isOpen && (
             <div className="md:hidden pb-4 space-y-2">
-              {['about', 'projects', 'skills','services', 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item)}
-                  className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition capitalize text-sm"
-                >
-                  {item}
-                </button>
-              ))}
+              {["about", "projects", "skills", "services", "contact"].map(
+                (item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item)}
+                    className="block w-full text-left px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition capitalize text-sm"
+                  >
+                    {item}
+                  </button>
+                ),
+              )}
               <button
                 onClick={() => {
                   downloadCV();
@@ -113,18 +119,21 @@ const Hero = () => {
       </nav>
 
       {/* HERO SECTION */}
-      <section id="hero" className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 flex items-center bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900">
+      <section
+        id="hero"
+        className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 flex items-center bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900"
+      >
         <div className="max-w-7xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
             {/* LEFT: Hero Text */}
             <div className="space-y-6">
-              
               {/* Status Indicators */}
               <div>
                 <div className="flex items-center gap-2 mb-3">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
-                  <p className="text-gray-300 font-medium text-sm">Open for Collaborations</p>
+                  <p className="text-gray-300 font-medium text-sm">
+                    Open for Collaborations
+                  </p>
                 </div>
               </div>
 
@@ -137,10 +146,11 @@ const Hero = () => {
                   <br />
                   <span className="text-white">Impact Tech</span>
                 </h1>
-                
+
                 {/* Subtitle */}
                 <p className="text-base text-gray-300 max-w-lg leading-relaxed mb-6">
-                  Building scalable systems for healthcare and nonprofit organizations
+                  Building scalable systems for healthcare and nonprofit
+                  organizations
                 </p>
 
                 {/* Quote */}
@@ -154,15 +164,18 @@ const Hero = () => {
               {/* CTA Buttons - Side by Side */}
               <div className="flex flex-wrap gap-3">
                 <button
-                  onClick={() => scrollToSection('projects')}
+                  onClick={() => scrollToSection("projects")}
                   className="px-6 py-3 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition flex items-center gap-2 group"
                 >
                   View My Work
-                  <ArrowRight size={18} className="group-hover:translate-x-1 transition" />
+                  <ArrowRight
+                    size={18}
+                    className="group-hover:translate-x-1 transition"
+                  />
                 </button>
 
                 <button
-                  onClick={() => scrollToSection('contact')}
+                  onClick={() => scrollToSection("contact")}
                   className="px-6 py-3 border-2 border-white text-white hover:bg-white/10 font-bold rounded-lg transition"
                 >
                   Get in Touch
@@ -193,38 +206,52 @@ const Hero = () => {
                 <ProjectCard
                   title="Hope Emayian Platform"
                   description="Donor & volunteer management system for Maasai CBO"
-                  tech={['React', 'Node.js', 'MySQL', 'PayPal']}
+                  tech={["React", "Node.js", "MySQL", "PayPal"]}
                 />
-                
+
                 <ProjectCard
                   title="Employee Management System"
                   description="Full-stack HR dashboard with leave & attendance tracking"
-                  tech={['React', 'Express', 'JWT', 'UI/UX']}
+                  tech={["React", "Express", "JWT", "UI/UX"]}
                 />
               </div>
 
               {/* Tech Stack - 2 Column Grid with Uniform White */}
               <div className="bg-gray-900/30 border border-gray-700/50 rounded-2xl p-4">
-                <p className="text-gray-300 text-sm font-semibold mb-4">TECH STACK</p>
+                <p className="text-gray-300 text-sm font-semibold mb-4">
+                  TECH STACK
+                </p>
                 <div className="grid grid-cols-2 gap-2">
-                  {[
-                    'React',
-                    'Node.js',
-                    'MySQL',
-                    'Git',
-                    'Docker',
-                    'AWS'
-                  ].map((tech, i) => (
-                    <div key={i} className="px-3.5 py-2.5 rounded-lg font-semibold text-sm text-center hover:scale-105 transition bg-white/10 text-white border border-white/30 hover:bg-white/20">
-                      {tech}
-                    </div>
-                  ))}
+                  {["React", "Node.js", "MySQL", "Git", "Docker", "AWS"].map(
+                    (tech, i) => (
+                      <div
+                        key={i}
+                        className="px-3.5 py-2.5 rounded-lg font-semibold text-sm text-center hover:scale-105 transition bg-white/10 text-white border border-white/30 hover:bg-white/20"
+                      >
+                        {tech}
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <img
+        src="/leina.jpg"
+        alt="Anne Leina, Software Engineer"
+        width="192"
+        height="192"
+        loading="eager"
+        className="h-48 w-48 rounded-full object-cover border-2 border-white/80 shadow-lg"
+      />
+      <div className="flex flex-col-reverse items-center gap-8 md:flex-row md:justify-between">
+        <div className="text-center md:text-left">
+          {/* your existing name, title, intro, buttons */}
+        </div>
+        <img />
+      </div>
     </>
   );
 };
