@@ -239,7 +239,7 @@ const Hero = () => {
         </div>
       </section>
       <img
-        src="/leina.jpg"
+        src="/leina.jpeg"
         alt="Anne Leina, Software Engineer"
         width="192"
         height="192"
