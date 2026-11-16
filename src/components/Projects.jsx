@@ -30,7 +30,20 @@ export default function Projects() {
       githubUrl: '#',
     },
     {
-      id: 3,
+  id: 3,
+  title: 'Nasarumaa Collection E-commerce Platform',
+  problem:
+    'Maasai artisans needed an online storefront to showcase and sell handcrafted products beyond local markets.',
+  solution:
+    'Built an e-commerce platform with a product catalogue, a lightweight admin dashboard, and WhatsApp order notifications.',
+  tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Netlify', 'Render'],
+  impact:
+    'Gives the brand a live online presence where customers can browse products and place orders that reach the owner directly on WhatsApp.',
+  demoUrl: '#',
+  githubUrl: '#',
+},
+    {
+      id: 4,
       title: 'Healthcare IT Infrastructure',
       problem:
         'Healthcare institutions needed reliable systems for managing EHR/EMR, medical billing, and enterprise networks.',
